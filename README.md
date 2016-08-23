@@ -91,3 +91,6 @@ I experimented with a few different machine learning models using the sci-kit le
 | Recall        | 0.278         | 0.389         |
 | F1            | 0.278         | 0.467         |
 | MCC           | 0.175         | 0.418         |
+
+### Discussion
+I had the best result with the AdaBoost algorithm, although I couldn't get the same scores using the tester.py script, perhaps because of different handling of 'NaN' values. I was quite surprised at how sensitive the models were to the cross validation paradigm, and even to the random state parameter. I would like to explore this more with a larger dataset to see if the sensitivity declines, or is always present.
