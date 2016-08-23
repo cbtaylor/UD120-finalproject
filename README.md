@@ -1,7 +1,7 @@
 # UD120-finalproject
 The final project for the Udacity Machine Learning course.
 
-I started with an exploratory data analysis to get a feeling for what the features were and the nature of the data. The data loaded as a dictionary of dictionaries. For each key (the name of an individual, with two exceptions) there was a dictionary with the following keys:
+I started with an exploratory data analysis to get a feeling for what the features were and the nature of the data. The data loaded as a dictionary of dictionaries. For each of the 146 keys (the name of an individual, with two exceptions) there was a dictionary with the following keys:
 poi, 
 salary, 
 exercised_stock_options, 
@@ -24,8 +24,7 @@ shared_receipt_with_poi,
 from_this_person_to_poi, 
 from_poi_to_this_person, 
 and email_address. 
-The first, 'poi', is the target or label and is a boolean. With the exception of 'email_address' all the others are integer values and all have missing values indicated by 'NaN'. Each feature is either related to compensation or to the numbers of e-mail messages sent or received.
-
+The first, 'poi', is the target or label and is a boolean. There are 18 True values for 'poi'. With the exception of 'email_address' all the others are integer values and all have missing values indicated by 'NaN'. Each feature is either related to compensation or to the numbers of e-mail messages sent or received. I took a look at the correlation matrix and the features with the lowest correlation with 'poi' were 'to_messages' (0.059), 'from_messages' (0.0743), and 'expenses' (0.0603).
 
 ### Data prep
 For my own benefit I wanted to get some experience prepping the data for use with sci-kit learn. I didn't use, or even take a look at, the provided data prep function. I chose to put the data into a pandas dataframe. This was quite a learning process as I slowly all the steps necessary to get the data into a form that ski-kit learn would accept. Some steps that I took were probably not entirely necessary, such as my initial dealings with the NaN values. I replaced all NaN values with either 0 or the median of the column. For things like the number of messages received it seemed reasonable to put in the median, whereas for something like expenses there was no reason to believe that every person had expenses so I replaced each NaN with 0.
