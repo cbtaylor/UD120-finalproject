@@ -87,7 +87,12 @@ try:
     print " F1 score:", f1
     print "      MCC:", mcc
     print
-    print "feature importances:", dtc.feature_importances_
+    print "feature importances:"
+
+    zipped = zip(X.columns.values[selected], dtc.feature_importances_)
+    zipped.sort(key = lambda t: t[1], reverse = True)
+    for feature, importance in zipped:
+        print feature, importance
 
 except:
     print
