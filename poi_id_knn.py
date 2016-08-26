@@ -30,9 +30,14 @@ print "features:", X.shape
 X_new = SelectKBest(chi2, k=1).fit_transform(X, y)
 print "after select k best:", X_new.shape
 
-knn = KNeighborsClassifier(n_neighbors=4, weights='distance', 
-                           algorithm='auto', leaf_size=30, p=2, 
-                           metric='minkowski', metric_params=None, n_jobs=1)
+knn = KNeighborsClassifier(n_neighbors=4, 
+                           weights='distance', 
+                           algorithm='auto', 
+                           leaf_size=30, 
+                           p=2, 
+                           metric='minkowski', 
+                           metric_params=None, 
+                           n_jobs=1)
 
           
 num_folds = 4
